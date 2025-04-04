@@ -1,0 +1,55 @@
+// Fonts
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../../assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url("../../assets/fonts/Roboto-Bold.ttf");
+    font-weight: 700;
+}
+
+$ff-font: "Roboto";
+$ff-font-bold: "Roboto Bold";
+
+$fs-title: clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem);
+
+// Colors
+
+$red: #FF6155;
+$blue-700: #36384D;
+$blue-800: #242742;
+$grey: #949494;
+$white: #FFFFFF;
+
+// Spacings
+
+$space-100: 0.5rem; // 8px
+$space-200: 1rem; // 16px
+$space-300: 1.5rem; // 24px
+$space-400: 2rem; // 32px
+$space-500: 2.5rem; // 40px
+$space-600: 3rem; // 48px
+$space-800: 4rem; // 64px
+$space-900: 4.5rem; // 72px
+$space-1000: 5rem; // 80px
+$space-1300: 6.5rem; // 104px
+
+$space-100-em: 0.5em; // 8px
+$space-200-em: 1em; // 16px
+$space-300-em: 1.5em; // 24px
+$space-400-em: 2em; // 32px
+$space-500-em: 2.5em; // 40px
+$space-600-em: 3em; // 48px
+$space-800-em: 4em; // 64px
+$space-900-em: 4.5em; // 72px
+$space-1000-em: 5em; // 80px
+$space-1300-em: 6.5em; // 104px
+
+// Radius
+
+$rounded-sm: 8px;
+$rounded-md: 16px;
+$rounded-lg: 36px;

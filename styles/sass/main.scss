@@ -1,0 +1,173 @@
+@use 'reset' as *;
+@use 'variables' as *;
+
+body {
+    font-family: $ff-font;
+    color: $blue-800;
+    background-color: $blue-700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media screen and (min-width: 48rem) {
+        padding: $space-900 0;
+    }
+}
+
+main {
+    display: grid;
+    place-items: center;
+}
+
+.title {
+    font-family: $ff-font-bold;
+    font-size: $fs-title;
+}
+
+.btn {
+    font-family: $ff-font-bold;
+    color: $white;
+    background-color: $blue-800;
+    border-radius: $rounded-sm;
+    border-color: transparent;
+    width: 100%;
+    padding: $space-200-em;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #FF6A3A, #FF527B);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.card {
+    background-color: $white;
+    width: 100%;
+
+    &__img {
+        width: 100%;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: $space-300;
+        padding: $space-500 $space-300;
+    }
+
+    &__feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: $space-100;
+    }
+
+    &__feature {
+        display: flex;
+        align-items: flex-start;
+        gap: $space-200;
+    }
+
+    &__form {
+        margin-top: $space-200;
+    }
+
+    &__input-label-error {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $space-100;
+    }
+
+    &__input-label, &__input-error {
+        font-family: $ff-font-bold;
+        font-size: 0.75rem;
+    }
+
+    &__input-error {
+        color: $red;
+    }
+
+    &__input {
+        width: 100%;
+        border: 1px solid $grey;
+        border-radius: $rounded-sm;
+        padding: $space-200-em $space-300-em;
+        margin-bottom: $space-300;
+        color: $blue-800;
+        outline-color: $blue-800;
+    }
+
+    &__input--error {
+        color: $red;
+        border-color: $red;
+        outline-color: $red;
+    }
+
+    @media screen and (min-width: 48rem) {
+        padding: $space-500;
+        border-radius: $rounded-lg;
+        max-width: 38rem;
+
+        &__img {
+            margin-bottom: $space-500;
+            border-radius: $rounded-md;
+        }
+
+        &__content {
+            padding: 0;
+        }
+
+        &__input {
+            margin-bottom: clamp($space-200, 0.4286rem + 1.1905vw, $space-300);
+        }
+    }
+
+    @media screen and (min-width: 64rem) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: $space-800;
+        max-width: 56.5rem;
+        padding: $space-300 $space-400;
+
+        &__img {
+            margin-bottom: 0;
+        }
+
+        &__content {
+            gap: $space-400;
+        }
+    }
+}
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $white;
+    gap: $space-400;
+    height: 100vh;
+    padding: 9.313rem $space-300 $space-900;
+    
+    &__btn {
+        margin-top: auto;
+    }
+    
+    @media screen and (min-width: 48rem) {
+        height: auto;
+        padding: 3.75rem $space-800;
+        border-radius: $rounded-lg;
+        max-width: 31.5rem;
+
+        &__title {
+            font-size: 3.5rem;
+        }
+
+        &__btn {
+            margin: 0;
+        }
+    }
+}
