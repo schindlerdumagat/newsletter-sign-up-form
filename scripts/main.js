@@ -22,9 +22,9 @@ form.addEventListener("submit", (e) => {
         return;
     }
 
+    successEmail.innerText = emailValue;
     successPage.classList.remove("hidden");
     formPage.classList.add("hidden");
-    successEmail.innerText = emailValue;
 
 })
 
@@ -32,12 +32,12 @@ emailInput.addEventListener("focus", () => {
     if (emailInput.classList.contains("card__input--error")) {
         emailInput.classList.remove("card__input--error");
         inputError.innerText = "";
-        successEmail.innerText = "";
     }
 });
 
 successBtn.addEventListener("click", () => {
+    emailInput.value = "";
+    successEmail.innerText = "";
     successPage.classList.add("hidden");
     formPage.classList.remove("hidden");
-    emailInput.value = "";
 })
