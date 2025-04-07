@@ -76,7 +76,11 @@
           <form id="form" class="card__form" novalidate>
             <div class="card__input-label-error">
               <label class="card__input-label" for="email">Email Address</label>
-              <span id="error" class="card__input-error"></span>
+              <span
+                id="error"
+                class="card__input-error"
+                aria-live="assertive"
+              ></span>
             </div>
             <input
               class="card__input"
@@ -85,6 +89,8 @@
               id="email"
               placeholder="email@company.com"
               required
+              aria-describedby="error"
+              autocomplete="email"
             />
             <button class="btn" type="submit">
               Subscribe to monthly newsletter
@@ -94,14 +100,20 @@
       </article>
 
       <div id="success-page" class="feedback hidden">
-        <img src="./assets/images/icon-success.svg" alt="" class="feedback__img" />
+        <img
+          src="./assets/images/icon-success.svg"
+          alt=""
+          class="feedback__img"
+        />
         <h2 class="title feedback__title">Thanks for subscribing!</h2>
         <p class="description">
           A confirmation email has been sent to
-          <strong id="success-email"></strong>. Please open
-          it and click the button inside to confirm your subscription.
+          <strong id="success-email"></strong>. Please open it and click the
+          button inside to confirm your subscription.
         </p>
-        <button id="success-btn" class="feedback__btn btn">Dismiss message</button>
+        <button id="success-btn" class="feedback__btn btn">
+          Dismiss message
+        </button>
       </div>
     </main>
 
