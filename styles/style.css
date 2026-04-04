@@ -1,0 +1,104 @@
+/* CSS RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  line-height: 1;      /* Set shorter line heights */   
+  text-wrap: balance;  /* Balance text wrapping on headings */
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* FONTS */
+
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/roboto-v51-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/roboto-v51-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* CUSTOM VARIABLES */
+
+:root {
+
+    /* COLORS */
+
+    --clr-white: hsl(0 100%, 100%);
+    --clr-grey: hsl(0, 0%, 58%);
+    --clr-red: hsl(4, 100%, 67%);
+    --clr-blue-800: hsl(234, 29%, 20%);
+    --clr-blue-700: hsl(235, 18%, 26%);
+
+    --gradient: linear-gradient(to left, hsl(15, 100%, 61%), hsl(346, 100%, 66%));
+
+    /* TYPOGRAPHY */
+
+    --ff-main: "Roboto", sans-serif;
+    --fs-heading: clamp(2.5rem, 1.5458rem + 4.0712vw, 3.5rem);
+    --fs-body: 1rem;
+    --fs-label: .75rem;
+
+    /* SPACINGS */
+
+    --space-100: .5rem;
+    --space-200: 1rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-500: 2.5rem;
+    --space-600: 3rem;
+    --space-800: 4rem;
+    --space-900: 4.5rem;
+    --space-1300: 6.5rem;
+
+}
+
+body {
+
+}
