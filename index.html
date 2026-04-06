@@ -15,9 +15,36 @@
 
 </head>
 <body>
-
   <main>
-    
+    <article class="sign-up" aria-labelledby="sign-up-title">
+      <picture>
+        <source srcset="./assets/images/illustration-sign-up-desktop.svg" media="(min-width: 64em)">
+        <img class="sign-up__banner" src="./assets/images/illustration-sign-up-mobile.svg" width="375" height="284" alt="" role="presentation">
+      </picture>
+      <div class="sign-up__content">
+        <h1 class="sign-up__title" id="sign-up-title">Stay updated!</h1>
+        <p class="sign-up__description">Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul class="sign-up__features" role="list">
+          <li class="sign-up__feature">Product discovery and building what matters</li>
+          <li class="sign-up__feature">Measuring to ensure updates are a success</li>
+          <li class="sign-up__feature">And much more!</li>
+        </ul>
+        <form class="form" novalidate>
+          <div class="form__label-container">
+            <label class="form__label" for="email">Email Address</label>
+            <span class="form__error" id="form-error" aria-live="polite"></span>
+          </div>
+          <input class="form__input" type="email" name="email" id="email" aria-describedby="form-error" placeholder="email@company.com" autocomplete="email" required>
+          <button class="form__submit" type="submit">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+    </article>
+    <section class="success hidden" aria-hidden="true">
+      <img src="./assets/images/icon-success.svg" alt="" role="presentation" class="success__check" width="64" height="64">
+      <h1 class="success__title">Thanks for subscribing!</h1>
+      <p class="success__description">A confirmation email has been sent to <span class="success__email">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription.</p>
+      <button type="button" class="success__button">Dismiss Message</button>
+    </section>
   </main>
 
   <script src="./scripts/script.js"></script>
