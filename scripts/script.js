@@ -6,49 +6,76 @@ const successMessage = document.querySelector(".success");
 const emailPlaceholder = document.querySelector(".success__email");
 const dismissMessageButton = document.querySelector(".success__button");
 
-form.addEventListener("submit", (e) => {
+const formState = {
+    hasAttemptedSubmit: false
+}
+
+form.addEventListener("submit", handleSubmit);
+email.addEventListener("input", handleInput)
+dismissMessageButton.addEventListener("click", handleDismiss);
+
+function handleSubmit(e) {
     e.preventDefault();
 
-    if (!email.validity.valid) {
-        showError()
-    } else {
+    if (validateInput()) {
         // Hide sign up page
         signup.classList.add("hidden");
-        signup.setAttribute("aria-hidden", "true");
 
         // Show thank you page
-        emailPlaceholder.textContent = email.value;
+        const emailValue = email.value.trim();
+        emailPlaceholder.textContent = emailValue;
         successMessage.classList.remove("hidden")
-        successMessage.removeAttribute("aria-hidden");
+        successMessage.focus();
     }
 
-})
+    formState.hasAttemptedSubmit = true;
+};
 
-// 
-dismissMessageButton.addEventListener("click", () => {
+function handleInput() {
+
+    // Will trigger once the user already submitted the form once.
+    if(formState.hasAttemptedSubmit) {
+        validateInput()
+    }
+}
+
+function handleDismiss() {
 
     // Hide thank you page
     successMessage.classList.add("hidden");
-    successMessage.setAttribute("aria-hidden", "true");
 
     // Clear sign up form
-    email.value = "";
-    email.classList.remove("form__input--error");
-    error.textContent = "";
+    form.reset();
+    formState.hasAttemptedSubmit = false;
 
     // Show sign up page
     signup.classList.remove("hidden");
-    signup.removeAttribute("aria-hidden");
+    email.focus();
+}
 
-})
+function validateInput() {
 
-function showError() {
-
-    if (email.validity.valueMissing) {
-        error.textContent = "Email address is required"
-    } else if (email.validity.typeMismatch) {
-        error.textContent = "Valid email required"
+    if(!email.validity.valid) {
+        showError();
+        return false;
     }
 
+    clearError();
+    return true;
+}
+
+function showError() {
+    error.textContent = getErrorMessage();
     email.classList.add("form__input--error");
+}
+
+function getErrorMessage() {
+    if (email.validity.valueMissing) return "Email address is required";
+    if (email.validity.typeMismatch) return "Valid email required";
+    return "";
+}
+
+function clearError() {
+    email.classList.remove("form__input--error");
+    error.textContent = "";
 }

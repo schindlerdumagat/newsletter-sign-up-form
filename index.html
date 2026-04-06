@@ -19,7 +19,7 @@
     <article class="sign-up" aria-labelledby="sign-up-title">
       <picture>
         <source srcset="./assets/images/illustration-sign-up-desktop.svg" media="(min-width: 64em)">
-        <img class="sign-up__banner" src="./assets/images/illustration-sign-up-mobile.svg" width="375" height="284" alt="" role="presentation">
+        <img class="sign-up__banner" src="./assets/images/illustration-sign-up-mobile.svg" width="375" height="284" alt="">
       </picture>
       <div class="sign-up__content">
         <h1 class="sign-up__title" id="sign-up-title">Stay updated!</h1>
@@ -35,15 +35,15 @@
             <span class="form__error" id="form-error" aria-live="polite"></span>
           </div>
           <input class="form__input" type="email" name="email" id="email" aria-describedby="form-error" placeholder="email@company.com" autocomplete="email" required>
-          <button class="form__submit" type="submit">Subscribe to monthly newsletter</button>
+          <button class="button form__submit" type="submit">Subscribe to monthly newsletter</button>
         </form>
       </div>
     </article>
-    <section class="success hidden" aria-hidden="true">
-      <img src="./assets/images/icon-success.svg" alt="" role="presentation" class="success__check" width="64" height="64">
-      <h1 class="success__title">Thanks for subscribing!</h1>
+    <section class="success hidden" tabindex="-1">
+      <img src="./assets/images/icon-success.svg" alt="" class="success__check" width="64" height="64">
+      <h2 class="success__title">Thanks for subscribing!</h2>
       <p class="success__description">A confirmation email has been sent to <span class="success__email">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription.</p>
-      <button type="button" class="success__button">Dismiss Message</button>
+      <button type="button" class="button success__button">Dismiss Message</button>
     </section>
   </main>
 
