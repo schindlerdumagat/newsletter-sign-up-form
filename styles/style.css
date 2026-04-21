@@ -71,7 +71,7 @@ input, button {
 
   /* COLORS */
 
-  --clr-white: hsl(0 100%, 100%);
+  --clr-white: hsl(0, 100%, 100%);
   --clr-grey: hsl(0, 0%, 58%);
   --clr-red: hsl(4, 100%, 67%);
   --clr-red-100: hsl(2, 100%, 95%);
